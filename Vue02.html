@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- try Vue
+  wy
+  easy to learn, also bother.
+  btw: why not www org enhance HTML itself ?
+-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Try Vue.js</title>
+    <script src="vue.min.js"></script> <!--using local vue.js-->
+</head>
+<body>
+    <div id="firstVue">
+        <p>{{mydata}}</p>
+        <input type="number" v-model.number="mydata" />
+        <button v-on:click="clickButton">Click Me</button>
+        <p>{{mytotal}}</p>
+    </div>
+</body>
+<script type="text/javascript">
+    var myVue = new Vue({
+        el:"#firstVue",
+        data:{
+            mydata: 1,
+            mytotal: 0
+        },
+        methods:{
+            clickButton: function() {
+                this.mytotal = this.mytotal + this.mydata
+            }
+        }
+    })
+</script>
+</html>
