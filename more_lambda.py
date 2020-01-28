@@ -1,11 +1,15 @@
-points = [{'x': 2, 'y': 3},{'x': 4, 'y': 1}, {'x': 6, 'y': 2}]
-points.sort(key=lambda a: a['y'], reverse=True)
+# demo from A Byte of Python
+# markwy
+#
+
+points = [{'x': 2, 'y': 3}, {'x': 4, 'y': 1}, {'x': 6, 'y': 2}]
+points.sort(key=lambda a: a['y'], reverse = True)
 print(points)
 
 student_tuples = [
     ('john', 'A', 15),
     ('jane', 'B', 12),
-    ('dave', 'B', 10)]  # last item is not follewed a , is ok
+    ('dave', 'B', 10)]  # last item is not followed comma, is ok
 
 
 print(student_tuples)
