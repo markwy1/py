@@ -8,12 +8,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Try Vue.js</title>
-    <script src="vue.min.js"></script> <!--using local vue.js-->
+    <script src="vue.js"></script> <!--using local vue.js-->
 </head>
 <body>
-    <div id="firstVue" :hidden="my_hidden">
+    <div id="firstVue">
         <p>{{mydata}}</p>
-        <input type="text" v-model="my_data" />
+        <input type="text" v-model="mydata" />
         <button v-on:click="clickButton">Click Me</button>
     </div>
     <div id="Vue2">
@@ -25,10 +25,49 @@
         el:"#firstVue",
         data:{
             mydata: "test wy",
-            username: "Yong Wang"
+            //username: "Yong Wang"
             //my_hidden: "hidden"
-
+        }
+        methods:{
+            clickButton: function() {
+                mydata = "change msg"
+            }
+        }
+    })
+    new Vue({
+        el: "#Vue2",
+        data:{
+            username: "Yong Wang"
         }
     })
 </script>
+
+				{ text: '2011.7-2013.7，“Quantitative Models and Algorithms for Project Management in Software Development Processes”，美国南佛罗里达大学GAP基金，1万美元' },
+				{ text: '2012.1-2015.12，“基于运筹学的软件阶段成本预测关键问题研究”，国家自然科学基金，52万元，61170312，主持' },
+				{ text: '2013.1-2014.12，“可信软件成本预测问题研究”，软件工程国家重点实验室开放基金，3万元，SKLSE2012-09-14，主持' },
+				{ text: '2013，“基于平板电脑的羽毛球技术训练质量监控和临场战术统计软件的开发与应用“， 省部级其他， 2013A121， 参与' },
+				{ text: '2014，“面向网上评卷业务的多对一非对称口令认证架构研究”， 人文社科其它（省部级）， ZK1437B005， 参与' },
+				{ text: '2015，“大数据背景下高校学生学业支持路径的探析与实践”， 教育部人文社会科学研究项目， 15JDSZ2005，参与' },
+				{ text: '2017，“基于慕课的学生学习行为分析及对策研究”， 人文社科横向服务， 20170117， 参与' },
+				{ text: '2018.12-2019.12，“某设备部件腐蚀演化规律研究”，科研合作项目，主持' },
+				{ text: '2019.5-2021.12，“软件工程统计方法教学案例库设计”，研究生质量提升计划，HDYA19001，5万元，主持' }
+
+				{ text: '王勇, 宋擒豹, 沈钧毅. 根据序列变化率预测软件阶段成本, 计算机学报, 32(7)(200907): pp.1346-1355，EI' },
+				{ text: 'Yong Wang, Qinbao Song, Bo Zeng, and Jin Liu. Simulation Error Characteristics of Grey Model GM(1,1) Under Translation Transformation, CIMSIM, Seoul(201309): pp.137-141，EI' },
+				{ text: 'Yong Wang, Qinbao Song, and Jin Liu. An Empirical Study on Translation Transformation's effect on GM(1,1), ICCSE, Guangzhou(201312): pp.101-108' },
+				{ text: 'Konglong Tang, Yong Wang, Hao Liu, Yanxiu Sheng, Xi Wang, and Zhiqiang Wei. Design and Implementation of Push Notification System Based on the MQTT Protocol, ICSCA, Changsha(201311): pp.116-119' },
+				{ text: 'Peihe Wang, Yong Wang, Hao Liu, Yanxiu Sheng, Xi Wang, and Zhiqiang Wei. Speech Enhancement Based on Auditory Masking Properties and Log-Spectral Distance, ICCSNT, Dalian(201310): pp.1060-1064' },
+				{ text: 'Zhilong Yang, Yong Wang, Yongquan Yang, and Zhiqiang Wei. Research and Design of a Real-time Interactive Application Development Model Based on the Android Platform, ISCID, Hangzhou(201310): pp.132-135' },
+				{ text: 'Yong Wang, Dalong Shi, Z.Q. WEI, X. Wang. Research on Universal Data Push Mechanism Based on XMPP Protocol and IAIDL for Smart Home, CICET, Hongkong(201403): pp.13-17' },
+				{ text: 'Yinlong Liu, Yong Wang. A Study on Software Development Month Effort, Journal of Software, 10(7)(201507): pp.798-804' },
+				{ text: '王勇，陆珍珍，惠普ALM工具在软件测试管理中的应用，电子技术与软件工程，2016(6), pp.67-68' },
+				{ text: 'He Yueyang, Zhu Xiaoyan, Wang Guangtao, Sun Heli, Wang Yong, Predicting Bugs in Software Code Changes Using Isolation Forest, 2017 IEEE international conference on Software Quality, Reliability and Security,QRS2017, p296-305' },
+				{ text: 'Wang Yong, Zhang Jing, The Effort Distribution of Software Development Phases, Computer Science and Application，2017,7(5), p428-437' },
+				{ text: '王勇，韩佩佩，基于改进的新陈代谢GM (1,1)模型的软件阶段成本预测，软件工程与应用，2017,6(3),p49-57' },
+				{ text: 'Wang Yong, Wang Lili, Li Yi, Zhu Xiaoyan, Time Distribution of Software Stage Effort, 2017 24th Asia-Pacific Software Engineering Conference Workshops (APSECW), Nanjing, China, 2017.12.4-8, pp:41-49, EI' },
+				{ text: 'Lili Wang, Yong Wang†, Do Extra Dollars Paid-off? - An Exploratory Study on TopCoder. The IEEE/ACM 5th International Conference Workshop on Crowdsourcing in Software Engineering (ICSE 2018 Workshop), Gothenburg, Sweden, 2018.05, pp: 21-27. EI' },
+				{ text: '王勇，李逸，王丽丽，朱晓燕. 基于类推和灰色模型的软件阶段成本预测. 计算机科学, 2018, 45(11A), pp:480-487, EI' },
+				{ text: 'Guozheng Zhang, Jie Li, Yong Wang†, Zhishen Liu, Delin Chang, and Jihui Tian. Vehicle-mounted validations of a 1.55 μm all-fiber continuous-wave coherent laser radar for measuring aircraft airspeed, Optical Engineering, 2018, SCI' },
+				{ text: 'Lili Wang, Ye Yang, Yong Wang†, Do Higher Incentives Lead to Better Performance? - An Exploratory Study on Software Crowdsourcing, ESEM2019, Porto de Galinhas, Brazil, Sep. 19th-20th, 2019, CCF B' }
+
 </html>

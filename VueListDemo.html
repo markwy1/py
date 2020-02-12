@@ -1,0 +1,103 @@
+<!--
+    for: try vue list.
+    @wy
+    from: https://blog.csdn.net/qq_41454044/article/details/90546141
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="js/vue.js"></script>
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="app">
+        <label>ID:</label>
+        <input type="text" v-model="id" class="from-inline form-control">
+        <label>NAME:</label>
+        <input type="text" v-model="name" class="form-inline form-control">
+        <button class="btn" @click="add">添加</button>
+        <br/>
+        <label>按名称检索:</label>
+        <input type="text" v-model="search" class="form-inline form-control">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>名称</th>
+                    <th>事件</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="i in list" :key="i.id">
+                    <td>{{i.id}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.date}}</td>
+                    <td @click="deletethis(i.id)">删除</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: function () {
+                return {
+                    list: [{
+                            id: 1,
+                            name: "奔驰",
+                            date: new Date()
+                        },
+                        {
+                            id: 2,
+                            name: "宝马",
+                            date: new Date()
+                        },
+                        {
+                            id: 3,
+                            name: "奥迪",
+                            date: new Date()
+                        },
+                    ],
+                    id:'',
+                    name:'',
+                    search:''
+                }
+            },
+            methods: {
+                add(){
+                    this.list.push({id:this.id,name:this.name,date:new Date()})
+                    this.id=''
+                    this.name=''
+                },
+                deletethis(id){
+                    var newlist=this.list.splice(0);
+                    for(var i=0;i<newlist.length;i++){
+                        if(newlist[i].id==id){
+                            newlist.splice(i,1);
+                            i--;
+                        }
+                    }
+                    this.list=newlist;
+                }
+            }
+        })
+    </script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

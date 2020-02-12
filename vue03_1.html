@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+  wy
+  try two vue objects
+  success.
+-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Try Vue.js</title>
+    <script src="vue.min.js"></script> <!--using local vue.js-->
+</head>
+<body>
+    <div id="firstVue">
+        <p>{{mydata}}</p>
+        <input type="text" v-model="mydata" />
+    </div>
+    <div id="SecVue">
+        <p>{{mydata2}}</p>
+        <input type="text" v-model="mydata2" />
+    </div>
+
+</body>
+<script type="text/javascript">
+    /* 测试使用2个Vue实例 */
+    var myVue = new Vue({
+        el:"#firstVue",
+        data:{
+            mydata: "test wy"
+        }
+    })
+
+    /* 第2个Vue实例*/
+    var myVue2 = new Vue({
+        el:"#SecVue",
+        data:{
+            mydata2: "data 2"
+        }
+    })
+</script>
+</html>

@@ -1,22 +1,37 @@
 <!DOCTYPE html>
+<!--
+    Vue存在的目的是什么？ 是操作HTML的界面元素。
+    因此，对普通tag的属性和事件进行绑定，是完成操作的手段。
+    v-bind, v-on是两种具体实现。
+-->
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Try Vue.js</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="vue.js"></script>
 </head>
 <body>
-    <div id="firstVue">
-        <p>{{mydata}}</p>
+    <div id="firstVue" :style="mystyle"> <!--冒号后不能有空格-->
+        <p :style="mypstyle" >{{mydata}}</p>
+        <p :style="myp2style">{{p2data}}</p>
 
     </div>
 </body>
 <script type="text/javascript">
+    var data = {
+        mydata: "test wy",
+        //myhidden: "hidden",
+        p2data: "这是第二行",
+        mystyle: "color:red",
+        mypstyle: "backgroundColor:#c3c3c3; font-size:10em",
+        //myp2style: "color:cyan; font-size:8em"
+        /*下面这样写也可以，但和CSS标准写法不一致，到底什么时候加引号。目前这不是重点*/
+        myp2style: {color:'cyan', 'font-weight':'200', 'font-size':'80px'}
+
+    }
     var myVue = new Vue({
-        el:"#firstVue"
-        data:{
-            mydata: "test wy"
-        }
+        el:"#firstVue" ,      // miss a comma here will display nothing
+        data: data
     })
 </script>
 </html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            pading: 0;
+        }
+        .outer_box {
+            position: relative;
+        }
+        .header {
+            background-color: #cccccc;
+            height: 150px;
+        }
+        .nav_float {
+            position: sticky;
+            top: 0;
+            height: 80px;
+            width: 100%;
+            align: center;
+            color: red;
+            background-color: #333333;
+        }
+        .common_div {
+            width: 200px;
+            height: 150px;
+            border: 1px solid blue;
+        }
+        .page_footer {
+            margin: 20px 0 0 0;
+            padding: 20px;
+            position: absolute;
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            color:#CCCCCC;
+            font-size:12px;
+            line-height: 14px;
+            background-color: #333333;
+        }
+    </style>
+</head>
+
+
+<body>
+<div class="outer-box">
+
+    <div class="header">
+      <div>
+          <p style="margin:0">this is a para within two layers.</p>
+      </div>
+    </div>
+
+    <div class="nav_float">
+
+    </div>
+    <script>
+        function show_message() {
+            alert("div clicked");
+                $(document).ready( function() {
+                    $(".nav_float").click(function(){
+                    $(".nav_float").text("abc");
+                })
+            })
+        }
+    </script>
+	<script>
+		//  update the copyright years automatically, in the footer area. 2020.1.30
+
+	</script>
+
+    <div>
+        <p style="background-color: #aaaaaa;">some paragraphs.</p>
+        <p>this is a paragraph.</p>
+        <p>this is a paragraph.</p>
+        <p>this is a paragraph.</p>
+        <p>this is a paragraph.</p>
+        <p>this is a paragraph.</p>
+        <p>this is a paragraph.</p>
+        <p>this is a paragraph.</p>
+        <div class="common_div">
+            <p>this is a div.</p>
+        </div>
+        <p>this is a paragraph.</p><p>this is a paragraph.</p>
+        <p>this is a paragraph.</p>
+        <p>this is a paragraph.</p>
+        <p>this is a paragraph.</p>
+        <p>this is a paragraph.</p>
+        <p>this is a paragraph.</p>
+        <p>this is a paragraph.</p>
+        <p>this is a paragraph.</p>
+        <p>this is a paragraph.</p>
+        <p>this is a paragraph.</p>
+        <p>this is a paragraph.</p><p>this is a paragraph.</p><p>this is a paragraph.</p><p>this is a paragraph.</p><p>this is a paragraph.</p>
+        <p>this is a paragraph.</p><p>this is a paragraph.</p><p>this is a paragraph.</p><p>this is a paragraph.</p><p>this is a paragraph.</p>
+        <p>this is a paragraph.</p><p>this is a paragraph.</p><p>this is a paragraph.</p><p>this is a paragraph.</p><p>this is a paragraph.</p>
+        <p>this is a paragraph.</p><p>this is a paragraph.</p><p>this is a paragraph.</p><p>this is a paragraph.</p><p>this is a paragraph.</p>
+
+
+    </div>
+<div class="page_footer">
+<p>footer</p>
+
+</div>
+
+</div>
+</body>
+</html>

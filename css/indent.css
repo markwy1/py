@@ -1,0 +1,30 @@
+body {
+    /*font-family: "Courier New";*/
+}
+.parent {
+    position: relative;
+    width: 80%;
+
+}
+
+/* begin 文献列表 */
+.paper-index {
+    counter-reset: item-counter;  /* 文章计数器 */
+    list-style: none;
+}
+
+.paper-index li {
+    counter-increment: item-counter;
+/*    text-indent: -2em;
+    padding:0em 0em 0em 2em;
+    margin:0em 0em 0em -2em;
+*/
+}
+
+/* add \200B for void li bug in safari */
+.paper-index li::before {
+    /*margin-right: 0em;*/
+    content: "\200B" "[" counter(item-counter, decimal) "] ";
+}
+
+/* end 文献列表 */

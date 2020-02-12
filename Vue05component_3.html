@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- Vue component demo
+    from: https://www.runoob.com/try/try.php?filename=vue2-component6
+
+    Version:
+        //1.再注册一个组件。如何在模板标签中设置样式属性？即<vtagh1>中
+        //2.完成1。
+        3. 带有data, methods的一个组件
+        总错，检查发现外层div结束标记放错了。
+        对学习组件，不是一个好例子。因为不是一个单纯的组件，用到了子组件自定义消息。
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="counter-event-example">
+            <p>{{ total }}</p>
+            <button-counter v-on:increment="incrementTotal"></button-counter>
+
+        </div>
+    </div>
+
+<script>
+    // 注册全局组件
+    Vue.component('button-counter', {
+        // data要写成函数
+        data: function() {
+            return {
+                counter: 0
+            }
+        },
+        methods: {
+            incrementHandler: function() {
+                this.counter += 1
+                this.$emit('increment')
+            }
+        },
+        template: '<button v-on:click="incrementHandler">{{ counter }}</button>'
+    })
+
+    // 创建根实例
+    new Vue({
+        el: '#counter-event-example',
+        data: {
+            total: 0
+        },
+        methods: {
+            incrementTotal: function() {
+                this.total += 1
+            }
+        }
+    })
+    /* 小结：也不用给Vue实例起名字 */
+</script>
+</body>
+</html>

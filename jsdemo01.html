@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<script>
+function displayDate(){
+	document.getElementById("demo").innerHTML=Date();
+}
+</script>
+    <script>
+    document.write("code in the head.");
+</script>
+
+</head>
+
+<body>
+
+<h1>我的第一个 JavaScript 程序</h1>
+<p id="demo">这是一个段落</p>
+<p id="year_start_end"></p>
+
+
+<button type="button" onclick="displayDate()">显示日期</button>
+
+<p>代码自动运行输出如下</p>
+<script>
+    document.write(Date() + " (code in the body)");
+</script>
+
+<script>
+    //  update the copyright years automatically, in the footer area. 2020.1.30
+    var curDate = new Date();
+    document.getElementById("year_start_end").innerHTML = "2009-" + curDate.getFullYear();
+</script>
+
+</body>
+</html>

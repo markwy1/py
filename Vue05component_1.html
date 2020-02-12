@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Vue component demo
+    runoob: 注册一个简单的全局组件 vtagh1
+    另外一个站例子代码不简洁，但叙述比较简洁，两个网站结合
+    Version:
+        1.再注册一个组件。如何在模板标签中设置样式属性？即<vtagh1>中
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <vtagh1></vtagh1>
+        <vtagh2></vtagh2>
+    </div>
+
+<script>
+    // 注册全局组件
+    Vue.component('vtagh1', {
+        template: '<h1>自定义组件，一个h1标签</h1>'
+    })
+    Vue.component('vtagh2', {
+        template: '<h2 style="color:red">自定义组件，一个h2标签</h2>'
+    })
+
+    // 创建根实例
+    new Vue({
+        el: '#app'
+    })
+    /* 小结：可见，也不用给Vue实例起名字 */
+</script>
+</body>
+</html>

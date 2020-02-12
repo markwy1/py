@@ -3,3 +3,4 @@
 # markwy
 
 print("Hello, World! Yong")
+print(3/2)

@@ -1,8 +1,6 @@
-
-
 import os
 import time
-## wy comments
+# y..comments
 # 1. The files and directories to be backed up are
 # specified in a list.
 # Example on Windows:
